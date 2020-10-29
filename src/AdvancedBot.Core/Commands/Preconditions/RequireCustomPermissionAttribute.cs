@@ -6,11 +6,11 @@ using Discord.WebSocket;
 
 namespace AdvancedBot.Core.Commands.Preconditions
 {
-    public class RequireCustomPermission : PreconditionAttribute
+    public class RequireCustomPermissionAttribute : PreconditionAttribute
     {
         private GuildPermission _permission;
 
-        public RequireCustomPermission(GuildPermission permission = default)
+        public RequireCustomPermissionAttribute(GuildPermission permission = default)
         {
             _permission = permission;
         }

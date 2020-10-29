@@ -29,7 +29,8 @@ namespace AdvancedBot.Core
             _commands = commands ?? new CustomCommandService(new CustomCommandServiceConfig
             {
                 CaseSensitiveCommands = false,
-                LogLevel = LogSeverity.Info
+                LogLevel = LogSeverity.Info,
+                BotInviteIsPrivate = true
             });
         }
 
@@ -52,7 +53,7 @@ namespace AdvancedBot.Core
         }
 
         private async Task LogAsync(LogMessage msg)
-            => Console.WriteLine($"{msg.Source}: {msg.Message}");
+            => Console.WriteLine($"{msg.Source}: {msg.Exception.Message}");
 
         private async Task OnReadyAsync()
             => await _client.SetGameAsync("Being a bot.");
