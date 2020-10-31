@@ -30,7 +30,8 @@ namespace AdvancedBot.Core
             {
                 CaseSensitiveCommands = false,
                 LogLevel = LogSeverity.Info,
-                BotInviteIsPrivate = true
+                BotInviteIsPrivate = true,
+                RepositoryUrl = "https://github.com/Phoenix-Network-Ltd/PhoenixAdmin"
             });
         }
 

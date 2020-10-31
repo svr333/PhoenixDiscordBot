@@ -107,6 +107,7 @@ namespace AdvancedBot.Core.Entities
 
         public void SetModRole(ulong id)
             => ModRoleId = id;
+<<<<<<< HEAD
 
         public void AddSelfObtainableRole(ulong id)
         {
@@ -142,5 +143,7 @@ namespace AdvancedBot.Core.Entities
                 PingableRoles.Remove(trigger);
             else throw new Exception($"{trigger} is not on the list.");
         }
+=======
+>>>>>>> f24e6438a3771811deed595f63d41adbf05c412b
     }
 }
