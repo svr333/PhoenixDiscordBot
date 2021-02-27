@@ -31,7 +31,7 @@ namespace AdvancedBot.Core.Commands.Modules
 
             await ReplyAsync($"Hey <@&{role.Id}>, {Context.User.Mention} wants to play!");
 
-            await Task.Delay(500).ContinueWith(t => role.ModifyAsync(x => x.Mentionable = false));
+            await Task.Delay(1300).ContinueWith(t => role.ModifyAsync(x => x.Mentionable = false));
         }
 
         [Command("add")][RequireCustomPermission(GuildPermission.ManageRoles)]
