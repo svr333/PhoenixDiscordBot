@@ -24,14 +24,10 @@ namespace AdvancedBot.Core.Commands.Modules
             var role = Context.Guild.Roles.First(x => x.Id == roleId);
             var guildUser = Context.User as SocketGuildUser;
 
-            await role.ModifyAsync(x => x.Mentionable = true);
-
             if (guildUser.Roles.FirstOrDefault(x => x.Id == role.Id) is null)
                 throw new Exception($"You need role **{role.Name}** in order to use this command.");
 
             await ReplyAsync($"Hey <@&{role.Id}>, {Context.User.Mention} wants to play!");
-
-            await Task.Delay(1300).ContinueWith(t => role.ModifyAsync(x => x.Mentionable = false));
         }
 
         [Command("add")][RequireCustomPermission(GuildPermission.ManageRoles)]
